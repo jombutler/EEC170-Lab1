@@ -22,37 +22,14 @@
 # in the same frame.
 
 # Declare the label global so the grader's harness can call it.
-.globl byteswap
+.globl funcTemp
 
-byteswap:
+funcTemp:
 
 	# addi sp, sp, -4	# allocate the stack frame
 	# sw ra, 0(sp)		# save the return address
 
 	# your code here
-	
-	li a0, 0x12345678
-	li t0, 0xff000000
-	li t1, 0x00ff0000
-	li t2, 0x0000ff00
-	li t3, 0x000000ff
-	
-	and t5, t5, zero
-	and t0, a0, t0
-	and t1, a0, t1
-	and t2, a0, t2
-	and t3, a0, t3
-
-	srli t0, t0, 24
-	srli t1, t1, 8
-	slli t2, t2, 8
-	slli t3, t3, 24
-	
-	or t5, t0, t5
-	or t5, t1, t5
-	or t5, t2, t5
-	or t5, t3, t5
-	
 
 	# lw ra, 0(sp)		# restore the return address
 	# addi sp, sp, 4	# deallocate the stack frame

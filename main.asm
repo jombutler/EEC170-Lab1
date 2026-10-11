@@ -137,27 +137,27 @@ main:
 	# to test byteswap function            expect 0x78563412
 	# print_str("\nOutput of byteswap function\n")
 	li x10, 0x12345678 # pass inputs
-	call byteswap
+	#call byteswap
 	mv t0, a0
-	print_str("Value stored in x10:")
-	print_hex(t0)
+	#print_str("Value stored in x10:")
+	#print_hex(t0)
 
 	# to test ctz function                 expect 25
 	# print_str("\nOutput of ctz function\n")
-	li x10, 0x0A000000 # pass inputs
+	# li x10, 0x80000000 # pass inputs
 	# call ctz
-	mv t0, a0
+	# mv t0, a0
 	# print_str("Value stored in x10:")
 	# print_int(t0)
 
 	# to test satadd function              expect 0x7fffffff
 	# print_str("\nOutput of satadd function\n")
-	li x10, 0x7ffffff0
-	li x11, 0x00000020 # pass inputs
-	# call satadd
+	li x10, 0x00000005
+	li x11, 0xfffffffb # pass inputs
+	call satadd
 	mv t0, a0
-	# print_str("Value stored in x10:")
-	# print_hex(t0)
+	print_str("Value stored in x10:")
+	print_hex(t0)
 
 	# to test stridedsum function          expect 90
 	# print_str("\nOutput of stridedsum function\n")
