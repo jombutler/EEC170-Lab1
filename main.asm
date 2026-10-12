@@ -154,10 +154,10 @@ main:
 	# print_str("\nOutput of satadd function\n")
 	li x10, 0x00000005
 	li x11, 0xfffffffb # pass inputs
-	call satadd
+	#call satadd
 	mv t0, a0
-	print_str("Value stored in x10:")
-	print_hex(t0)
+	#print_str("Value stored in x10:")
+	#print_hex(t0)
 
 	# to test stridedsum function          expect 90
 	# print_str("\nOutput of stridedsum function\n")
@@ -179,11 +179,11 @@ main:
 
 	# to test calculator function          expect 14
 	# print_str("\nOutput of calculator function\n")
-	test_str8("2+3*4   ") # pass inputs, padded to eight characters
+	test_str8("2+3*4-7 ") # pass inputs, padded to eight characters
 	# call calculator
 	mv t0, a0
-	# print_str("Value stored in x10: ")
-	# print_int(t0)
+	print_str("Value stored in x10: ")
+	print_int(t0)
 
 	exit()
 
