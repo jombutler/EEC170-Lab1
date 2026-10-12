@@ -161,26 +161,26 @@ main:
 
 	# to test stridedsum function          expect 90
 	# print_str("\nOutput of stridedsum function\n")
-	la x10, example_array
-	li x11, 3          # n
-	li x12, 2          # stride, in elements
-	# call stridedsum
-	mv t0, a0
-	# print_str("Value stored in x10: ")
-	# print_int(t0)
+	#la x10, example_array
+	#li x11, 8          # n
+	#li x12, 1          # stride, in elements
+	#call stridedsum
+	#mv t0, a0
+	#print_str("Value stored in x10: ")
+	#print_int(t0)
 
 	# to test rldecode function            expect 0xAAABBCDD
 	# print_str("\nOutput of rldecode function\n")
-	li x10, 0x3A2B1C2D # pass inputs
-	# call rldecode
+	li x10, 0x116a001b # pass inputs
+	call rldecode
 	mv t0, a0
-	# print_str("Value stored in x10: ")
-	# print_hex(t0)
+	print_str("Value stored in x10: ")
+	print_hex(t0)
 
 	# to test calculator function          expect 14
 	# print_str("\nOutput of calculator function\n")
-	test_str8("2+3*4-7 ") # pass inputs, padded to eight characters
-	# call calculator
+	test_str8("99+99*999") # pass inputs, padded to eight characters
+	call calculator
 	mv t0, a0
 	print_str("Value stored in x10: ")
 	print_int(t0)
